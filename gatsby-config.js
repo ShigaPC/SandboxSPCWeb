@@ -12,7 +12,7 @@ module.exports = {
     title: '滋賀大学パソコン研究会 ウェブサイト',
     author: '滋賀大学パソコン研究会',
     description: '滋賀大学パソコン研究会の活動報告をしています。',
-    siteUrl: 'https://www.shigapc.com/',
+    siteUrl: 'https://agitated-mccarthy-f966a1.netlify.com/',
   },
   plugins: [
     {
@@ -101,12 +101,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: isNetlifyProduction
-        ? { policy: [{ userAgent: '*' }] }
+        ? {
+          policy: [{ userAgent: '*', disallow: ['/'] }]
+        }
         : {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null
-          }
+          policy: [{ userAgent: '*', disallow: ['/'] }]
+        }
     },
     {
       resolve: `gatsby-plugin-manifest`,
